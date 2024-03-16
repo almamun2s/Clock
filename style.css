@@ -1,5 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Oswald&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #232a5c;
+    color: #fff;
+    font-family: oswald;
+}
+
+.container{
+    position: relative;
+}
+
+.clock{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: #56615a7c;
+    border: 3px solid #56615aff ;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock span{
+    position: absolute;
+    transform: rotate( calc( 30deg  * var(--i) ) );
+    inset: 15px;
+    text-align: center;
+}
+
+.clock span b{
+    transform: rotate( calc( -30deg  * var(--i) ) );
+    display: inline-block;
+}
+
+.clock::after{
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.hand i{
+    position: absolute;
+    background-color: var(--clr);
+    width: 5px;
+    height: 10rem;
+    border-radius: 1rem;
+    z-index: -1;
+}
+.hand b{
+    background-color: #56615a;
+    border-radius: 8px;
 }
